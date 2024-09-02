@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React exercise</title>
+  </head>
+
+  <body>
+    <script
+      crossorigin="anonymous"
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/Babel"
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    >
+      console.log(React);
+
+      const mainStyle = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "80vh",
+      };
+
+      const footerStyle = {
+        backgroundColor: "lightblue",
+        textAlign: "center",
+        padding: "10px",
+      };
+
+      const appStyle = {
+        textAlign: "center",
+      };
+
+      // JSX element, user
+            let name = `Timothy Mutuma`;
+            let title = `front-end engineer`;
+            let gender = `male`;
+            let email =  `timothymutuma@gmail.com`;
+            let phoneNumber = `0712345678`;
+
+            const user = (
+              <h1>{name}</h1>
+              <p>{title}</p>
+              <p>{gender}</p>
+              <p>{email}</p>
+              <p>{phoneNumber}</p>
+            );
+
+            
+            const footNote = `Mutuma@2024`;
+            const footer = (
+              <footer style={footerStyle}>
+                <p>{footNote}</p>
+              </footer>
+            );
+
+            const app = (
+              <div style={appStyle}>
+                <main style={mainStyle}>
+                </main>
+                  {footer}
+              </div>
+            );
+    </script>
+  </body>
+</html>
