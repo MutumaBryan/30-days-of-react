@@ -7,7 +7,7 @@
     <style>
       #root {
         height: 100%;
-        font-family: 'Source Sans 3';
+        font-family: "Source Sans 3";
       }
     </style>
     <link
@@ -29,9 +29,6 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-
-      // import userImage from "https://st2.depositphotos.com/1000423/8862/i/450/depositphotos_88626850-stock-photo-ask-any-questions.jpg";
-
       const rootElement = document.getElementById("root");
       const user = {
         firstName: "Asabeneh",
@@ -67,36 +64,69 @@
 
       const header = (
         <header>
-          <p>
-            {user.firstName} {user.lastName}
-          </p>{" "}
-          <br></br>
-          <p>
-            {user.occupation}, {user.country}
-          </p>{" "}
-          <br></br>
+          <img src="/Day 03/images/asabeneh.png" alt={userImageAlt}></img>
+          <p style={{ margin: "10px 0" }}>
+            <strong>
+              {user.firstName} {user.lastName}
+            </strong>
+            <p style={{}}>
+              {user.occupation}, {user.country}
+            </p>
+          </p>
         </header>
       );
 
-      const title = <h2>SKILLS</h2>;
+      const title = <h2 style={{ margin: "5px 0 5px 0" }}>SKILLS</h2>;
+      const skillStyles = {
+        backgroundColor: "blue",
+        margin: "5px",
+        padding: "5px",
+        borderRadius: "7px",
+        color: "white",
+      };
 
-      const skills = user.skills.map((skill) => <p key={skill}>skill</p>)
+      const skills = user.skills.map((skill) => (
+        <span style={skillStyles} key={skill}>
+          {skill}
+        </span>
+      ));
+
+      const skillDiv = (
+        <div
+          style={{
+            
+            padding: "0 5px",
+            display: "flex",
+            flexWrap: "wrap",
+            alignContent: "space-around",
+          }}
+        >
+          {skills}
+        </div>
+      );
 
       const footer = (
-        <footer>
+        <footer
+          style={{
+            color: "grey",
+            fontSize: "16px",
+            margin: "5px 0",
+            fontWeight: "lighter",
+          }}
+        >
           <p>Joined on Aug 30, 2020</p>
         </footer>
       );
 
       const appStyles = {
         height: "100vh",
-        fontFamily: "Source Sans 3",
+        margin: "20px",
       };
       const app = (
         <div style={appStyles}>
           {header}
           {title}
-          {skills}
+          {skillDiv}
           {footer}
         </div>
       );
