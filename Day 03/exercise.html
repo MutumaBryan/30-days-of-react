@@ -6,20 +6,10 @@
     <title>Exercise Day 3</title>
     <style>
       #root {
-        display: flex;
-        height: 100vh;
-        align-items: center;
+        height: 100%;
+        font-family: 'Source Sans 3';
       }
     </style>
-    <script
-      crossorigin="anonymous"
-      src="https://unpkg.com/react@16/umd/react.development.js"
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
       rel="stylesheet"
@@ -29,7 +19,17 @@
   <body>
     <div id="root"></div>
 
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
+
       // import userImage from "https://st2.depositphotos.com/1000423/8862/i/450/depositphotos_88626850-stock-photo-ask-any-questions.jpg";
 
       const rootElement = document.getElementById("root");
@@ -67,7 +67,6 @@
 
       const header = (
         <header>
-          <img src={userImage} alt={userImageAlt} />
           <p>
             {user.firstName} {user.lastName}
           </p>{" "}
