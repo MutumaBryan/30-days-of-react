@@ -11,10 +11,6 @@
         align-items: center;
       }
     </style>
-  </head>
-
-  <body>
-    <div id="root"></div>
     <script
       crossorigin="anonymous"
       src="https://unpkg.com/react@16/umd/react.development.js"
@@ -23,38 +19,69 @@
       src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://unpkg.com/@babel/standalone/babel.min.js"
-    ></script>
-    <script type="text/babel">
-      import userImage from 'https://st2.depositphotos.com/1000423/8862/i/450/depositphotos_88626850-stock-photo-ask-any-questions.jpg'
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+  </head>
 
-      const root = document.querySelector("#root");
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // import userImage from "https://st2.depositphotos.com/1000423/8862/i/450/depositphotos_88626850-stock-photo-ask-any-questions.jpg";
+
+      const rootElement = document.getElementById("root");
       const user = {
-        firstName: 'Asabeneh',
-        lastName: 'Yetaneh',
-        occupation: 'Senior Developer',
-        country: 'Finland',
-        skills: ['HTML', 'CSS', 'Sass', 'JS', 'React', 'Redux', 'Node', 'MongoDB', 'Python', 'Flask', 'Django', 'Numpy', 'Pandas', 'Data Analysis', 'MYSQL', 'GraphQL', 'D3.js', 'Gatsby', 'Docker', 'Heroku', 'Git'],
+        firstName: "Asabeneh",
+        lastName: "Yetaneh",
+        occupation: "Senior Developer",
+        country: "Finland",
+        skills: [
+          "HTML",
+          "CSS",
+          "Sass",
+          "JS",
+          "React",
+          "Redux",
+          "Node",
+          "MongoDB",
+          "Python",
+          "Flask",
+          "Django",
+          "Numpy",
+          "Pandas",
+          "Data Analysis",
+          "MYSQL",
+          "GraphQL",
+          "D3.js",
+          "Gatsby",
+          "Docker",
+          "Heroku",
+          "Git",
+        ],
       };
 
-      const userImageAlt = 'Image of the ' + user.firstName;
+      const userImageAlt = "Image of the " + user.firstName;
 
       const header = (
         <header>
           <img src={userImage} alt={userImageAlt} />
-          <p>{user.firstName} {user.lastName}</p> <br></br>
-          <p>{user.occupation}, {user.country}</p> <br></br>
+          <p>
+            {user.firstName} {user.lastName}
+          </p>{" "}
+          <br></br>
+          <p>
+            {user.occupation}, {user.country}
+          </p>{" "}
+          <br></br>
         </header>
       );
 
-      const title = (
-        <h2>SKILLS</h2>
-      );
+      const title = <h2>SKILLS</h2>;
 
-      const skills = user.skills.map((skill) => (
-        <p key={skill}>skill</p>
-      ));
+      const skills = user.skills.map((skill) => <p key={skill}>skill</p>)
 
       const footer = (
         <footer>
@@ -63,8 +90,9 @@
       );
 
       const appStyles = {
-        height: '100vh',
-      }
+        height: "100vh",
+        fontFamily: "Source Sans 3",
+      };
       const app = (
         <div style={appStyles}>
           {header}
@@ -72,9 +100,9 @@
           {skills}
           {footer}
         </div>
-      )
+      );
 
-      ReactDOM.render(app,root);
+      ReactDOM.render(app, rootElement);
     </script>
   </body>
 </html>
